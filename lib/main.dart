@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_application_1/kalkulator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -79,6 +80,20 @@ class PortfolioPage extends StatelessWidget {
               title: const Text('Home'),
               onTap: () {
                 Navigator.pop(context); // Menutup Drawer
+              },
+            ),
+            ListTile(
+              leading:
+                  const Icon(FontAwesomeIcons.calculator, color: Colors.orange),
+              title: const Text('Calculator'),
+              onTap: () {
+                Navigator.pop(context); // Close the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          const CalculatorPage()), // Navigate to the Calculator page
+                );
               },
             ),
             ListTile(
